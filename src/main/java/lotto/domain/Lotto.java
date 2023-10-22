@@ -2,6 +2,7 @@ package lotto.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
+import lotto.view.LottoOutputView;
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -25,7 +26,11 @@ public class Lotto {
     }
 
     // TODO: 추가 기능 구현
-    private Lotto initializeLotto() {
+    public static Lotto makeLotto() {
         return new Lotto(Randoms.pickUniqueNumbersInRange(1, 45, 6));
+    }
+
+    public void showLottoNumbers() {
+        LottoOutputView.printLottoNumbers(this.numbers);
     }
 }

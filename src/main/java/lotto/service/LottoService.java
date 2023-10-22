@@ -10,4 +10,6 @@ public class LottoService {
         Validator.validateDivided(price, LOTTO_PRICE, "[ERROR] 로또 가격으로 나누어 떨어지지 않습니다.");
         return price / LOTTO_PRICE;
     }
+
+
 }
