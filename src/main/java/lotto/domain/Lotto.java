@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Collections;
 import java.util.List;
 import lotto.Validator.Validator;
+import lotto.util.Util;
 import lotto.view.LottoOutputView;
 
 public class Lotto {
@@ -20,6 +21,7 @@ public class Lotto {
     }
 
     private void validate(List<Integer> numbers) {
+        System.out.println(numbers);
         Validator.validateIntegerListLength(numbers, 6);
         Validator.validateIntegerListInRange(numbers, 1, 45);
         Validator.validateIntegerListHasDifferentNumber(numbers);
@@ -42,4 +44,15 @@ public class Lotto {
         LottoOutputView.printLottoNumbers(this.numbers);
     }
 
+    public static LottoWinning confirmLottos(Lotto userLotto, Lotto winningLotto, int bonusLottoNumber) {
+        int count = Util.countSameNumberBetweenIntegerLists(userLotto.numbers, winningLotto.numbers);
+        boolean isBonusLottoNumberWinning = userLotto.numbers.contains(bonusLottoNumber);
+        return LottoWinning.matchLottoWinning(count, isBonusLottoNumberWinning);
+    }
+
+    public void validateLottoNotContainsLottoNumber(int bonusLottoNumber) {
+        if (this.numbers.contains(bonusLottoNumber)) {
+            throw new IllegalArgumentException("[ERROR]보너스 번호는 당첨번호와 중복된 번호입니다.");
+        }
+    }
 }
