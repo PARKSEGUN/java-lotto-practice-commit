@@ -2,7 +2,7 @@ package lotto.util;
 
 import java.util.ArrayList;
 import java.util.List;
-import lotto.Validator.Validator;
+import lotto.validator.Validator;
 
 public class Util {
     private static final int INTEGER_ZERO = 0;

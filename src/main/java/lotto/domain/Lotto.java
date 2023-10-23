@@ -3,8 +3,8 @@ package lotto.domain;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Collections;
 import java.util.List;
-import lotto.Validator.Validator;
 import lotto.util.Util;
+import lotto.validator.Validator;
 import lotto.view.LottoOutputView;
 
 public class Lotto {
@@ -20,10 +20,10 @@ public class Lotto {
         this.numbers = numbers;
     }
 
-    private void validate(List<Integer> numbers) {
+    public static void validate(List<Integer> numbers) {
         System.out.println(numbers);
-        Validator.validateIntegerListLength(numbers, 6);
-        Validator.validateIntegerListInRange(numbers, 1, 45);
+        Validator.validateIntegerListLength(numbers, LOTTO_SIZE);
+        Validator.validateIntegerListInRange(numbers, LOTTO_START_NUMBER, LOTTO_END_NUMBER);
         Validator.validateIntegerListHasDifferentNumber(numbers);
     }
 

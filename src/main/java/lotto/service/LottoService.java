@@ -1,8 +1,8 @@
 package lotto.service;
 
-import lotto.Validator.Validator;
 import lotto.domain.Lotto;
 import lotto.domain.LottoUser;
+import lotto.validator.Validator;
 
 public class LottoService {
 
