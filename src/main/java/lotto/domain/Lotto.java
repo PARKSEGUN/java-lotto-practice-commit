@@ -2,6 +2,7 @@ package lotto.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
+import lotto.Validator.Validator;
 import lotto.view.LottoOutputView;
 
 public class Lotto {
@@ -17,11 +18,11 @@ public class Lotto {
     }
 
     private void validate(List<Integer> numbers) {
-        if (numbers.size() != 6) {
-            throw new IllegalArgumentException("[ERROR]로또의 크기가 6이어야합니다.");
-        }
-
+        Validator.validateIntegerListLength(numbers, 6);
+        Validator.validateIntegerListInRange(numbers, 1, 45);
+        Validator.validateIntegerListHasDifferentNumber(numbers);
     }
+
 
     @Override
     public String toString() {
