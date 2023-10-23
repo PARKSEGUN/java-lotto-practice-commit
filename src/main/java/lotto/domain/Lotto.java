@@ -1,6 +1,5 @@
 package lotto.domain;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import java.util.Collections;
 import java.util.List;
 import lotto.util.Util;
@@ -20,7 +19,7 @@ public class Lotto {
         this.numbers = numbers;
     }
 
-    public static void validate(List<Integer> numbers) {
+    private void validate(List<Integer> numbers) {
         System.out.println(numbers);
         Validator.validateIntegerListLength(numbers, LOTTO_SIZE);
         Validator.validateIntegerListInRange(numbers, LOTTO_START_NUMBER, LOTTO_END_NUMBER);
@@ -36,9 +35,7 @@ public class Lotto {
     }
 
     // TODO: 추가 기능 구현
-    public static Lotto makeLotto() {
-        return new Lotto(Randoms.pickUniqueNumbersInRange(LOTTO_START_NUMBER, LOTTO_END_NUMBER, LOTTO_SIZE));
-    }
+
 
     public void showLottoNumbers() {
         LottoOutputView.printLottoNumbers(this.numbers);
