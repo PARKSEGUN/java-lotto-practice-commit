@@ -13,7 +13,6 @@ public class LottoController {
         while (true) {
             int lottosCount = lottoService.priceToLottosCount(LottoInputView.readPurchaseAmount());
             LottoUser lottoUser = new LottoUser(lottosCount);
-            lottoService.purchaseLottos(lottoUser, lottosCount);
             Lotto winningLotto = LottoInputView.readWinningLotto();
             int bonusLottoNumber = LottoInputView.readBonusLottoNumber();
             LottoGame lottoGame = new LottoGame(winningLotto, bonusLottoNumber);

@@ -1,11 +1,11 @@
 package lotto;
 
-import lotto.domain.Lotto;
+import lotto.controller.LottoController;
 
 public class Application {
     public static void main(String[] args) {
         // TODO: 프로그램 구현
-        Lotto lotto = Lotto.makeLotto();
-        lotto.showLottoNumbers();
+        LottoController lottoController = new LottoController();
+        lottoController.playGame();
     }
 }

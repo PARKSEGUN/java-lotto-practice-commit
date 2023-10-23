@@ -23,10 +23,11 @@ public class LottoUser {
         this.lottos.add(lotto);
     }
 
-    public void confirmWinningLotto(Lotto winningLotto, int bonusLottoNumber) {
+    public List<LottoWinning> confirmWinningLotto(Lotto winningLotto, int bonusLottoNumber) {
         for (Lotto lotto : this.lottos) {
             lottoWinnings.add(Lotto.confirmLottos(lotto, winningLotto, bonusLottoNumber));
         }
+        return this.lottoWinnings;
     }
 
     @Override
