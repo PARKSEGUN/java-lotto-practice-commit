@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LottoUser {
-    private int purchaseAmount;
+    private int purchaseLottosCount = 0;
 
     private List<Lotto> lottos = new ArrayList<>();
 
     private List<LottoWinning> lottoWinnings = new ArrayList<>();
 
-    public LottoUser(int purchaseAmount) {
-        this.purchaseAmount = purchaseAmount;
+    public LottoUser(int purchaseLottosCount) {
+        this.purchaseLottosCount = purchaseLottosCount;
     }
 
     public void addLotto(Lotto lotto) {
