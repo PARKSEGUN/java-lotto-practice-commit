@@ -16,9 +16,6 @@ public class Util {
     }
 
     public static List<Integer> stringArrayToIntegerList(String[] stringArray) {
-        for (String s : stringArray) {
-            System.out.println(s);
-        }
         List<String> strings = stringArrayToStringList(stringArray);
         return stringListToIntegerList(strings);
     }
@@ -45,4 +42,26 @@ public class Util {
     }
 
 
+    public static int countSameNumberBetweenIntegerLists(List<Integer> integers1, List<Integer> integers2) {
+        int count = INTEGER_ZERO;
+        for (Integer integer : integers1) {
+            count += countSameIntegerByIntegers(integer, integers2);
+        }
+        return count;
+    }
+
+    public static int countSameIntegerByIntegers(Integer targetInteger, List<Integer> integers) {
+        int count = INTEGER_ZERO;
+        for (Integer integer : integers) {
+            count += countSame(integer, targetInteger);
+        }
+        return count;
+    }
+
+    public static int countSame(Object object1, Object object2) {
+        if (object1.equals(object2)) {
+            return INTEGER_ONE;
+        }
+        return INTEGER_ZERO;
+    }
 }
