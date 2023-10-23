@@ -2,9 +2,9 @@ package lotto.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
-import lotto.Validator.Validator;
 import lotto.domain.Lotto;
 import lotto.util.Util;
+import lotto.validator.Validator;
 
 public class LottoInputView {
     private static final int LOTTO_SIZE = 6;
