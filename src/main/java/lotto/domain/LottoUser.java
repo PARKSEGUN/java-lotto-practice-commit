@@ -2,6 +2,7 @@ package lotto.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import lotto.service.LottoService;
 
 public class LottoUser {
     private int purchaseLottosCount = 0;
@@ -12,9 +13,13 @@ public class LottoUser {
 
     public LottoUser(int purchaseLottosCount) {
         this.purchaseLottosCount = purchaseLottosCount;
+        for (int i = 0; i < purchaseLottosCount; i++) {
+            lottos.add(LottoService.makeLotto());
+        }
     }
 
     public void addLotto(Lotto lotto) {
+        this.purchaseLottosCount++;
         this.lottos.add(lotto);
     }
 
