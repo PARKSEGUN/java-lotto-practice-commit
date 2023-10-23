@@ -5,6 +5,10 @@ import java.util.List;
 import lotto.view.LottoOutputView;
 
 public class Lotto {
+    private final static int LOTTO_START_NUMBER = 1;
+    private final static int LOTTO_END_NUMBER = 45;
+    private final static int LOTTO_SIZE = 6;
+
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
@@ -16,6 +20,7 @@ public class Lotto {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException("[ERROR]로또의 크기가 6이어야합니다.");
         }
+
     }
 
     @Override
@@ -27,7 +32,7 @@ public class Lotto {
 
     // TODO: 추가 기능 구현
     public static Lotto makeLotto() {
-        return new Lotto(Randoms.pickUniqueNumbersInRange(1, 45, 6));
+        return new Lotto(Randoms.pickUniqueNumbersInRange(LOTTO_START_NUMBER, LOTTO_END_NUMBER, LOTTO_SIZE));
     }
 
     public void showLottoNumbers() {
