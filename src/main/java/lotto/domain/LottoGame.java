@@ -7,8 +7,9 @@ public class LottoGame {
 
     public LottoGame(Lotto winningLotto, int bonusLottoNumber) {
         this.winningLotto = winningLotto;
+        winningLotto.validateLottoNotContainsLottoNumber(bonusLottoNumber);
         this.bonusLottoNumber = bonusLottoNumber;
     }
 
-    
+
 }
