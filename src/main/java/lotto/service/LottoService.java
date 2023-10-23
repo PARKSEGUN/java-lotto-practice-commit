@@ -2,7 +2,6 @@ package lotto.service;
 
 import lotto.Validator.Validator;
 import lotto.domain.Lotto;
-import lotto.domain.LottoGame;
 import lotto.domain.LottoUser;
 
 public class LottoService {
@@ -20,8 +19,9 @@ public class LottoService {
         }
     }
 
-    public void ConfirmWinning(LottoUser lottoUser, LottoGame lottoGame) {
-
+    public void confirmWinningLotto(LottoUser lottoUser, Lotto winningLotto, int bonusLottoNumber) {
+        lottoUser.confirmWinningLotto(winningLotto, bonusLottoNumber);
     }
+
 
 }
