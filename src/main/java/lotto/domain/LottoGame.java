@@ -1,5 +1,7 @@
 package lotto.domain;
 
+import lotto.validator.Validator;
+
 public class LottoGame {
     private final Lotto winningLotto;
 
@@ -7,7 +9,7 @@ public class LottoGame {
 
     public LottoGame(Lotto winningLotto, int bonusLottoNumber) {
         this.winningLotto = winningLotto;
-        winningLotto.validateLottoNotContainsLottoNumber(bonusLottoNumber);
+        winningLotto.validateBonusNumber(bonusLottoNumber);
         this.bonusLottoNumber = bonusLottoNumber;
     }
 

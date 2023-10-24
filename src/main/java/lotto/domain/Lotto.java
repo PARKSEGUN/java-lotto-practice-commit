@@ -47,9 +47,7 @@ public class Lotto {
         return LottoWinning.matchLottoWinning(count, isBonusLottoNumberWinning);
     }
 
-    public void validateLottoNotContainsLottoNumber(int bonusLottoNumber) {
-        if (this.numbers.contains(bonusLottoNumber)) {
-            throw new IllegalArgumentException("[ERROR]보너스 번호는 당첨번호와 중복된 번호입니다.");
-        }
+    public void validateBonusNumber(int bonusLottoNumber) {
+        Validator.validateIntegerListNotContainsTargetInteger(this.numbers, bonusLottoNumber);
     }
 }
