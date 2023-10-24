@@ -75,4 +75,5 @@ class LottoTest {
         assertThat(reusltLottoWinning1).isEqualTo(lottoWinnings.get(0));
         assertThat(reusltLottoWinning2).isEqualTo(lottoWinnings.get(1));
     }
+
 }

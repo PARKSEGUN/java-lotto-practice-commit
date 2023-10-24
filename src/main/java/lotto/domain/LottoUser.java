@@ -18,9 +18,10 @@ public class LottoUser {
         }
     }
 
-    public void addLotto(Lotto lotto) {
+    public int addLotto(Lotto lotto) {
         this.purchaseLottosCount++;
         this.lottos.add(lotto);
+        return purchaseLottosCount;
     }
 
     public List<LottoWinning> confirmWinningLotto(Lotto winningLotto, int bonusLottoNumber) {
