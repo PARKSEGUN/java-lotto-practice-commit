@@ -51,7 +51,7 @@ class LottoTest {
         Lotto lotto = new Lotto(new ArrayList(Arrays.asList(1, 2, 3, 4, 5, 6)));
         int bonusNumber = 6;
         //when
-        Throwable result = catchThrowable(() -> lotto.validateLottoNotContainsLottoNumber(bonusNumber));
+        Throwable result = catchThrowable(() -> lotto.validateBonusNumber(bonusNumber));
         //then
         assertThat(result).isInstanceOf(IllegalArgumentException.class);
     }
