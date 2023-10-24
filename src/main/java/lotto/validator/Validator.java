@@ -37,9 +37,9 @@ public class Validator {
         }
     }
 
-    public static void validateStringContainsTargetString(String string, String target) {
-        if (!string.contains(target)) {
-            System.out.println("[ERROR]" + target + "을 포함하지 않습니다.");
+    public static void validateIntegerListNotContainsTargetInteger(List<Integer> integers, Integer integer) {
+        if (integers.contains(integer)) {
+            System.out.println("[ERROR] 값이 중복되었습니다.");
             throw new IllegalArgumentException();
         }
     }
